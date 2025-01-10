@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Last Rented Car</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+  
+}
+
+h1 {
+  color: #333;
+}
+
+.card {
+  background-color: #eaeaea;
+  border-radius: 5px;
+  padding: 15px;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+.card p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.card span {
+  font-weight: bold;
+  color: #555;
+}
+
+.button{
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    font-size: 14px ;
+    border: none;
+    border-radius: 20px;
+    height: 35px;
+    width: 160px;
+    margin-top: 40px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.75s ease;
+}
+
+.button:hover{
+    opacity: 0.9;
+    transform: translateY(-10px);
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Last Rented Car</h1>
+    <div class="card">
+      <h2>Car Details</h2>
+      <p><strong>Car Name:</strong> <span id="carName">Toyota Corolla</span></p>
+      <p><strong>Customer Name:</strong> <span id="customerName">John Doe</span></p>
+      <p><strong>Rental Date:</strong> <span id="rentalDate">2024-12-04</span></p>
+      <p><strong>Duration:</strong> <span id="rentalDuration">3 days</span></p>
+    </div>
+    <a href="index.html"><button class="button"> Back to home page</button></a>
+  </div>
+  <script>
+    // Data for the last rented car (this can be dynamically fetched from a database)
+const lastRentedCar = {
+  carName: "Honda Civic",
+  customerName: "Jane Doe",
+  rentalDate: "2024-12-04",
+  rentalDuration: "5 days"
+};
+
+// Function to dynamically update the page with car details
+function updateLastRentedCar() {
+  document.getElementById("carName").innerText = lastRentedCar.carName;
+  document.getElementById("customerName").innerText = lastRentedCar.customerName;
+  document.getElementById("rentalDate").innerText = lastRentedCar.rentalDate;
+  document.getElementById("rentalDuration").innerText = lastRentedCar.rentalDuration;
+}
+
+// Call the function on page load
+window.onload = updateLastRentedCar;
+
+  </script>
+</body>
+</html>
